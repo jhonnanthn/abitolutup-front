@@ -1,0 +1,7 @@
+<ngb-carousel *ngIf="images">
+    <ng-template ngbSlide *ngFor="let image of images">
+        <a routerLink="image.redirectTo" routerLinkActive="active">
+            <img [src]="image.url" alt="Random first slide" class="w-100">
+        </a>
+    </ng-template>
+</ngb-carousel>

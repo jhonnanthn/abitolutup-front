@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <div class="initial">
+      <button class="navbar-toggler" (click)="collapse=!collapse" type="button" aria-expanded="false" aria-label="Toggle navigation">
+        <img src="assets/img/menu.svg" width="24px" height="24px">
+      </button>
+      <div class="brand">
+          <a class="navbar-brand" href="#">ABITOLUT UP</a>
+      </div>
+      <div class="container-cart">
+        <a class="cart">
+          <img src="assets/img/shopping-bag.svg" width="24px" height="24px">
+          <span class="cartBadge">7</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse" (click)="collapse=true" [hidden]="collapse">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item active"><a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/about" routerLinkActive="active">Sobre</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/services" routerLinkActive="active">Serviços</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/contact" routerLinkActive="active">Contato</a></li>
+      </ul>
+    </div>
+</nav>

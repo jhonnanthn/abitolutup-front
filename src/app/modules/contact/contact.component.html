@@ -1,0 +1,36 @@
+<form class="container" (ngSubmit)="processForm()">
+  <div class="contact">
+    <div class="row">
+      <div class="col-md-12">
+        <label for="name" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="name">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email">
+      </div>
+      <div class="col-sm-6">
+        <label for="phone" class="form-label">Telefone</label>
+        <input type="phone" class="form-control" id="phone">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <label for="floatingTextarea2">Dúvidas</label>
+        <textarea class="form-control" placeholder="Digite aqui a sua dúvida ou sugestão" id="suggestion"></textarea>
+      </div>
+    </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Sign in</button>
+    </div>
+  </div>
+</form>
+<!--mat-form-field class="example-form-field">
+  <mat-label>Clearable input</mat-label>
+  <input matInput type="text" [(ngModel)]="value">
+  <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field-->
