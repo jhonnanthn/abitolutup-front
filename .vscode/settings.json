@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/5995f85b-f2ee-4fbd-b883-a0a214d2ad75/resourceGroups/AbitolutUp/providers/Microsoft.Web/sites/abitolutup",
+    "appService.deploySubpath": "."
+}
