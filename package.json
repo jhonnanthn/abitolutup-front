@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "server": "ng build && ng serve",
+    "start": "node server.js",
+    "server": "ng build && ng serve --prod --optimization=false",
     "postinstall": "ng build --aot --prod",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
@@ -12,6 +13,8 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/cli": "~12.0.0",
+    "@angular/compiler-cli": "~12.0.0",
     "@angular/animations": "~12.0.0",
     "@angular/cdk": "^12.0.0",
     "@angular/common": "~12.0.0",
@@ -48,8 +51,6 @@
   "devDependencies": {
     "@types/jquery": "^3.3.2",
     "@angular-devkit/build-angular": "~12.0.0",
-    "@angular/cli": "~12.0.0",
-    "@angular/compiler-cli": "~12.0.0",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
     "jasmine-core": "~3.7.0",
