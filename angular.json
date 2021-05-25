@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "institucional-website": {
+    "abitolutup-front": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/institucional-website",
+            "outputPath": "dist/abitolutup-front",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -85,10 +85,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "institucional-website:build:production"
+              "browserTarget": "abitolutup-front:build:production"
             },
             "development": {
-              "browserTarget": "institucional-website:build:development"
+              "browserTarget": "abitolutup-front:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -96,7 +96,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "institucional-website:build"
+            "browserTarget": "abitolutup-front:build"
           }
         },
         "test": {
@@ -122,5 +122,5 @@
       }
     }
   },
-  "defaultProject": "institucional-website"
+  "defaultProject": "abitolutup-front"
 }

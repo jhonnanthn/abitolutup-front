@@ -10,7 +10,7 @@ import {filter} from 'rxjs/operators';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'institucional-website';
+  title = 'abitolutup-front';
   page = 'Home';
   name = '';
 
