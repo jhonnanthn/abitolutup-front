@@ -1,23 +1,21 @@
 <div class="shop">
     <div class="filter">
-        <div class="row">
-            <div class="filter-title col-12">
-                <div class="title col-6">
-                    <span>{{title}}</span>
-                </div>
-                <div class="filter-ordenation col-6">
-                    <div class="ordenar pull-right">
-                        <select class="form-control" id="parameter" onchange="submitOrder(this)">
-                            <option value="">Ordenar por:</option>
-                            <option value="nome_a_z">Nome A-Z</option>
-                            <option value="nome_z_a">Nome Z-A</option>
-                            <option value="lancamentos">Lançamentos</option>
-                            <option value="menores_precos">Menores Preços</option>
-                            <option value="maiores_precos">Maiores Preços</option>
-                            <option value="maiores_descontos">Maiores Descontos</option>
-                            <option value="mais_vendidos" selected="">Mais Vendidos</option>
-                        </select>
-                    </div>
+        <div class="filter-title col-12">
+            <div class="title col-6 p-0">
+                <span>{{title}}</span>
+            </div>
+            <div class="filter-ordenation col-6">
+                <div class="ordenar pull-right">
+                    <select class="form-control" id="parameter" onchange="submitOrder(this)">
+                        <option value="">Ordenar por:</option>
+                        <option value="nome_a_z">Nome A-Z</option>
+                        <option value="nome_z_a">Nome Z-A</option>
+                        <option value="lancamentos">Lançamentos</option>
+                        <option value="menores_precos">Menores Preços</option>
+                        <option value="maiores_precos">Maiores Preços</option>
+                        <option value="maiores_descontos">Maiores Descontos</option>
+                        <option value="mais_vendidos" selected="">Mais Vendidos</option>
+                    </select>
                 </div>
             </div>
         </div>
