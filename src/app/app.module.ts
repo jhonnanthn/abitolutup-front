@@ -16,6 +16,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
 
 @NgModule({
   imports: [
@@ -33,7 +34,8 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
     HeaderComponent,
     ServicesComponent,
     HeaderComponent,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent
   ],
   providers: [],
   bootstrap: [AppComponent],

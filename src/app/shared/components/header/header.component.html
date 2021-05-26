@@ -1,9 +1,29 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
-        <ul class="nav navbar-nav pull-left login">
-            <li class="navbar-item"><img src="assets/img/facebook.svg" width="20px" height="20px"></li>
-            <li class="navbar-item"><img src="assets/img/instagram.svg" width="20px" height="20px"></li>
+        <ul class="nav navbar-nav pull-left me-auto">
+            <li class="nav-item"><a class="nav-link" routerLink="/home" routerLinkActive="active">Novo!</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categoria</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Action</a>
+                    </li>
+                    <li><a href="#">Another action</a>
+                    </li>
+                    <li><a href="#">Something else here</a>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" routerLink="/services" routerLinkActive="active">Marcas</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="/contact" routerLinkActive="active">Sale</a></li>
         </ul>
+
+        <ul class="nav navbar-nav pull-center">
+            <a class="navbar-brand" routerLink="/home">ABITOLUT UP</a>
+        </ul>
+
         <ul class="nav navbar-nav pull-right login">
             <!--li><a routerLink="/login" routerLinkActive="active"><i class="fas fa-user fa-2x"></i></a></li-->
             <li class="navbar-item"><img src="assets/img/search.svg" width="20px" height="20px"></li>
