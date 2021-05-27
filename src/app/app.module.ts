@@ -17,6 +17,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
+import { ProductDetailsComponent } from './shared/components/product-details/product-details.component';
 
 @NgModule({
   imports: [
@@ -35,7 +36,8 @@ import { FooterComponent } from './shared/components/footer/footer.component';
     ServicesComponent,
     HeaderComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    ProductDetailsComponent
   ],
   providers: [],
   bootstrap: [AppComponent],

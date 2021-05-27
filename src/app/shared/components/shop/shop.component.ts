@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Products } from '../../models/products';
 
 @Component({
   selector: 'app-shop',
@@ -9,6 +10,9 @@ export class ShopComponent implements OnInit {
 
   @Input()
   title: string = 'Produtos';
+
+  @Input()
+  products: Products[] | undefined;
 
   constructor() { }
 

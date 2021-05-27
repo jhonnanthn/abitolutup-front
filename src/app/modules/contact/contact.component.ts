@@ -10,12 +10,9 @@ export class ContactComponent implements OnInit {
   value = 'Clear me';
 
   constructor() { 
-    console.log('iniciou')
-
   }
 
   ngOnInit(): void {
-    console.log('iniciou')
   }
 
   processForm(){

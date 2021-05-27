@@ -22,175 +22,24 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-3 col-sm-6 col-6">
+            <div *ngFor="let product of products" class="col-md-3 col-sm-6 col-6">
                 <div class="product-grid3">
                     <div class="product-image3">
-                        <a href="#">
-                            <img class="pic-1" src="http://bestjquery.com/tutorial/product-grid/demo4/images/img-1.jpg">
-                            <img class="pic-2" src="http://bestjquery.com/tutorial/product-grid/demo4/images/img-2.jpg">
+                        <a [routerLink]="['/produto', product.id]">
+                            <img class="pic-1" [src]="product.images[0]">
+                            <img class="pic-2" [src]="product.images[1]">
                         </a>
                         <ul class="social">
                             <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
                             <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
                         </ul>
-                        <span class="product-new-label">New</span>
+                        <span *ngIf="product.isNew" class="product-new-label">New</span>
                     </div>
                     <div class="product-content">
-                        <h3 class="title"><a href="#">Men's Blazer</a></h3>
+                        <h3 class="title"><a href="#">{{product.name}}</a></h3>
                         <div class="price">
-                            $63.50
-                            <span>$75.00</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-6">
-                <div class="product-grid3">
-                    <div class="product-image3">
-                        <a href="#">
-                            <img class="pic-1" src="http://bestjquery.com/tutorial/product-grid/demo4/images/img-3.jpg">
-                            <img class="pic-2" src="http://bestjquery.com/tutorial/product-grid/demo4/images/img-4.jpg">
-                        </a>
-                        <ul class="social">
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Women's Designer Top</a></h3>
-                        <div class="price">
-                            $43.50
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-6">
-                <div class="product-grid3">
-                    <div class="product-image3">
-                        <a href="#">
-                            <img class="pic-1" src="http://bestjquery.com/tutorial/product-grid/demo4/images/img-5.jpg">
-                            <img class="pic-2" src="http://bestjquery.com/tutorial/product-grid/demo4/images/img-6.jpg">
-                        </a>
-                        <ul class="social">
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                        <span class="product-new-label">New</span>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Men's Blazer</a></h3>
-                        <div class="price">
-                            $63.50
-                            <span>$75.00</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-6">
-                <div class="product-grid3">
-                    <div class="product-image3">
-                        <a href="#">
-                            <img class="pic-1" src="http://bestjquery.com/tutorial/product-grid/demo4/images/img-7.jpg">
-                            <img class="pic-2" src="http://bestjquery.com/tutorial/product-grid/demo4/images/img-8.jpg">
-                        </a>
-                        <ul class="social">
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                        <span class="product-new-label">New</span>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Men's Blazer</a></h3>
-                        <div class="price">
-                            $63.50
-                            <span>$75.00</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 col-6">
-                <div class="product-grid3">
-                    <div class="product-image3">
-                        <a href="#">
-                            <img class="pic-1" src="http://bestjquery.com/tutorial/product-grid/demo4/images/img-1.jpg">
-                            <img class="pic-2" src="http://bestjquery.com/tutorial/product-grid/demo4/images/img-2.jpg">
-                        </a>
-                        <ul class="social">
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                        <span class="product-new-label">New</span>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Men's Blazer</a></h3>
-                        <div class="price">
-                            $63.50
-                            <span>$75.00</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-6">
-                <div class="product-grid3">
-                    <div class="product-image3">
-                        <a href="#">
-                            <img class="pic-1" src="http://bestjquery.com/tutorial/product-grid/demo4/images/img-3.jpg">
-                            <img class="pic-2" src="http://bestjquery.com/tutorial/product-grid/demo4/images/img-4.jpg">
-                        </a>
-                        <ul class="social">
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Women's Designer Top</a></h3>
-                        <div class="price">
-                            $43.50
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-6">
-                <div class="product-grid3">
-                    <div class="product-image3">
-                        <a href="#">
-                            <img class="pic-1" src="http://bestjquery.com/tutorial/product-grid/demo4/images/img-5.jpg">
-                            <img class="pic-2" src="http://bestjquery.com/tutorial/product-grid/demo4/images/img-6.jpg">
-                        </a>
-                        <ul class="social">
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                        <span class="product-new-label">New</span>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Men's Blazer</a></h3>
-                        <div class="price">
-                            $63.50
-                            <span>$75.00</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-6">
-                <div class="product-grid3">
-                    <div class="product-image3">
-                        <a href="#">
-                            <img class="pic-1" src="http://bestjquery.com/tutorial/product-grid/demo4/images/img-7.jpg">
-                            <img class="pic-2" src="http://bestjquery.com/tutorial/product-grid/demo4/images/img-8.jpg">
-                        </a>
-                        <ul class="social">
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                        <span class="product-new-label">New</span>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Men's Blazer</a></h3>
-                        <div class="price">
-                            $63.50
-                            <span>$75.00</span>
+                            R$ {{product.price}}
+                            <span *ngIf="product.lastPrice">R$ {{product.lastPrice}}</span>
                         </div>
                     </div>
                 </div>
