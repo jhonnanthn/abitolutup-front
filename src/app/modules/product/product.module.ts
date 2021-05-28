@@ -10,9 +10,11 @@ import { ProductDetailsModule } from 'src/app/shared/components/product-details/
     CommonModule,
     ProductDetailsModule,
     ProductRoutingModule,
-    ShopModule
+    ShopModule,
   ],
-  declarations: [ProductComponent],
+  declarations: [
+    ProductComponent,
+  ],
   exports: [ProductComponent]
 })
 

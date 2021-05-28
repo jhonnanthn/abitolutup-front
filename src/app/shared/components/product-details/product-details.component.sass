@@ -2,17 +2,31 @@
     
 .product 
     background: #fff
+    font-family: $roboto-slab
+
+    .routes
+        display: flex
+        margin-top: 2rem
+        margin-bottom: 2rem
+        text-transform: uppercase
+        .router
+            padding: 0 .5rem
+            a
+                color: #5f5f5f
+        .separator
+            color: #cabebe
 
     .product-content .description 
         font-size: 12.5px
         line-height: 20px
-        padding: 10px 14px 16px 19px
+        padding: 0 14px 16px 19px
         background: #fff
 
     .description-tabs 
         padding: 30px 0 5px!important
         .tab-content 
             padding: 10px 0
+            min-height: 150px
 
     .description
         .nav
@@ -34,7 +48,6 @@
     .product-deatil
         padding: 30px 30px 50px
         text-transform: uppercase
-        font-family: $roboto-slab
         .product-image 
             border-right: none!important
         .name
@@ -43,14 +56,30 @@
             small
                 display: block
                 font-size: 50% !important
+            .available
+                color: green
+            .not-available
+                color: red
             a
                 margin-left: 0
         .price-container
-            font-size: 24px
+            font-size: 20px
             margin: 0
             font-weight: 300
-            small 
-                font-size: 12px
+            .items
+                display: flex
+                .price
+                    font-family: Dincond-bold
+                    font-weight: bold
+                .lastPrice
+                    text-decoration: line-through
+                    color: #c9cac7
+                    padding: 0 1rem
+                .sale
+                    color: #e32b2b
+                small
+                    font-size: 12px
+                    margin-left: .5rem
         .size
             padding-top: 3rem
             li
@@ -62,12 +91,35 @@
                 padding: 9px 16px
                 width: 40px
                 height: 40px
-            .m, .g
+            li.not-available
+                background-color: #f2f2f2
+                cursor: no-drop 
+            li.not-available:before
+                content: ""
+                display: block
+                width: 55px
+                height: 1px
+                background-color: #d0d0d0
+                position: absolute
+                left: -9px
+                top: 19px
+                transform: rotate(45deg)
+            .M, .G
                 padding: 9px 15px
-            .gg, .xg, .xxg
+            .GG, .XG, .XXG
                 padding: 9px 12.5px
             .active
                 border: 1px solid #000
+        .buy
+            margin-top: 2rem
+            .btn
+                border-radius: 0
+            .btn-buy
+                width: 100%
+                background-color: #000
+                color: #fff
+            a
+                background-color: #efefef
 
 
 @media only screen and (min-width:1024px) 
@@ -89,3 +141,14 @@
     .product-content .product-info 
         position: relative
     
+@media only screen and (max-width: 600px)
+    .product-deatil .buy .btn-buy
+        width: auto !important
+    .product .routes
+        margin-bottom: 0
+        padding: 0 7px 0
+    .product .product-deatil
+        padding: 9px 8px 20px
+    
+    .product-content .description
+        margin-top: 1rem

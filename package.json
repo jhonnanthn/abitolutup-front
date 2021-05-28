@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
-    "server": "ng build && ng serve --prod --optimization=false",
+    "server": "ng build --aot --configuration production && ng serve --optimization=false",
     "postinstall": "ng build --aot --configuration production --prod",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
@@ -13,12 +13,12 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/cli": "~12.0.0",
-    "@angular/compiler-cli": "~12.0.0",
     "@angular/animations": "~12.0.0",
     "@angular/cdk": "^12.0.0",
+    "@angular/cli": "~12.0.0",
     "@angular/common": "~12.0.0",
     "@angular/compiler": "~12.0.0",
+    "@angular/compiler-cli": "~12.0.0",
     "@angular/core": "~12.0.0",
     "@angular/forms": "~12.0.0",
     "@angular/localize": "~12.0.0",

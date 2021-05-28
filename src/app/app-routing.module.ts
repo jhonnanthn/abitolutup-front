@@ -26,9 +26,10 @@ const routes: Routes = [
   { path: 'services', component: ServicesComponent, loadChildren: () => import('./modules/services/services.module').then(m => m.ServicesModule), data: { title: 'Serviços' }},
   { path: 'contact', component: ContactComponent, loadChildren: () => import('./modules/contact/contact.module').then(m => m.ContactModule), data: { title: 'Contato' }},
 
-  { path: 'produto/:category/:type', component: ProductComponent, data: { title: 'Produtos' }},
+  { path: 'trends', component: ProductComponent, data: { title: 'Produtos' }},
+  { path: 'trends/:category', component: ProductComponent, data: { title: 'Produtos' }},
+  { path: 'trends/:category/:type', component: ProductComponent, data: { title: 'Produtos' }},
   { path: 'produto/:productId', component: ProductDetailsComponent, data: { title: 'Produtos' }},
-  { path: 'produto', component: ProductComponent, data: { title: 'Produtos' }},
 
   { path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page
 ];

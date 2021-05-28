@@ -1,8 +1,14 @@
 <div class="product col-sm-12 col-md-12 col-lg-12">
-    <!-- product -->
+    <div class="routes col-sm-12 col-md-12 col-lg-12">
+        <div *ngFor="let productRouter of productRoutes; let index = index; let last = last">
+            <span class="router"><a href="{{productRouter.router}}">{{productRouter.name}}</a></span> 
+            <span class="separator" *ngIf="!last">/</span>
+        </div>
+    </div>
+    
     <div class="product-content product-wrap clearfix product-deatil">
         <div class="row">
-            <div class="col-md-5 col-sm-12 col-xs-12">
+            <div class="col-md-8 col-sm-12 col-xs-12">
                 <div class="product-image">
                     <div id="myCarousel-2" class="carousel slide">
                         <ol class="carousel-indicators">
@@ -30,24 +36,47 @@
                 </div>
             </div>
 
-            <div class="col-md-6 col-md-offset-1 col-sm-12 col-xs-12">
+            <div class="description col-md-4 col-sm-12 col-xs-12">
                 <h2 class="name">
-                    CAMISETA REGULAR APPROVE UPSIDEDOWN ROSE PRETA
-                    <small>EM ESTOQUE</small>
+                    {{product.name}}
+                    <small *ngIf="product.sizeOptions.length > 0" class="available">EM ESTOQUE</small>
+                    <small *ngIf="product.sizeOptions.length == 0" class="not-available">ESGOTADO</small>
                 </h2>
                 <hr />
                 <h3 class="price-container">
-                    R$ 129,54
-                    <small>ou em até 5x sem juros de 20,00</small>
+                    <div class="items">
+                        <div class="price" [class.sale]="product.lastPrice">{{product.price | currencyFormat }}</div>
+                        <div class="lastPrice" *ngIf="product.lastPrice">{{product.lastPrice | currencyFormat }}</div>
+                    </div>
+                    <div *ngIf="product.maxParcel > 1">
+                        <small>ou em até {{product.maxParcel}}x sem juros de {{(product.price / product.maxParcel).toFixed(2)}}</small>
+                    </div>
                 </h3>
                 <div class="size">
                     <label>Tamanho</label>
                     <ul class="nav nav-size">
-                        <li class="p">P</li>
-                        <li class="active m">M</li>
-                        <li class="g">G</li>
-                        <li class="gg">GG</li>
+                        <div *ngFor="let sizeOption of product.sizeOptions">
+                            <li
+                                class="{{sizeOption.size}}" 
+                                [class.active]="product.size === sizeOption.size"
+                                [class.not-available]="!sizeOption.available"
+                                (click)="sizeOption.available ? product.size = sizeOption.size : ''">
+                                {{sizeOption.size}}
+                            </li>
+                        </div>
                     </ul>
+                </div>
+                <div class="row buy">
+                    <div class="col-10">
+                        <a class="btn btn-buy btn-lg">Adicionar no carrinho</a>
+                    </div>
+                    <div class="col-2">
+                        <div class="btn-group pull-right">
+                            <a class="btn btn-white btn-lg">
+                                <img [src]="product.isWishlist ? 'assets/img/heart-wishlist-added.svg' : 'assets/img/heart-wishlist-add.svg'" width="24px" height="24px">
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <hr />
                 <div class="description description-tabs">
@@ -57,76 +86,16 @@
                     </ul>
                     <div id="myTabContent" class="tab-content">
                         <div class="tab-pane fade active in" id="more-information">
-                            <p>
-                                Tecido: Malha. Composição: 100% Algodão
-
-                                Modelo feminino
-                                Altura: 1,74
-                                Modelo usa: P
-
-                                Modelo masculino
-                                Altura: 1,80
-                                Modelo usa: G
-
-                                PP
-                                Comprimento: 72 cm
-                                Largura: 51 cm
-                                Barra: 51cm
-
-                                P
-                                Comprimento: 73 cm
-                                Largura: 53 cm
-                                Barra: 53cm
-
-                                M
-                                Comprimento: 75 cm
-                                Largura: 54 cm
-                                Barra: 54cm
-
-                                G
-                                Comprimento: 77 cm
-                                Largura: 57 cm
-                                Barra: 57cm
-
-                                GG
-                                Comprimento: 79 cm
-                                Largura: 59 cm
-                                Barra: 59cm
-
-                                XG
-                                Comprimento: 83 cm
-                                Largura: 60 cm
-                                Barra: 60cm
-
-                                Tolerância de: +/-1cm
-                            </p>
+                            <div [innerHtml]="product.description">
+                            </div>
                         </div>
                         <div class="tab-pane fade" id="specifications">
-                            Instruções de Lavagem:
-                            - Lave a mão com água em temperatura ambiente;
-                            - Não usar alvejantes;
-                            - Não usar secadora;
-                            - Secar à sombra;
-                            - Passar em temperatura mínima;
-                            - Não passe o ferro diretamente sobre a estampa;
-                            - Não limpar a seco.
-                        </div>
-                    </div>
-                </div>
-                <hr />
-                <div class="row">
-                    <div class="col-sm-12 col-md-6 col-lg-6">
-                        <a href="javascript:void(0);" class="btn btn-success btn-lg">Add to cart ($129.54)</a>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-6">
-                        <div class="btn-group pull-right">
-                            <button class="btn btn-white btn-default"><i class="fa fa-star"></i> Add to wishlist</button>
-                            <button class="btn btn-white btn-default"><i class="fa fa-envelope"></i> Contact Seller</button>
+                            <div [innerHtml]="product.instruction">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- end product -->
 </div>

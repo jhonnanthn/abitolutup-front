@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -37,10 +37,14 @@ import { FooterComponent } from './shared/components/footer/footer.component';
     NavbarComponent,
     FooterComponent,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: LOCALE_ID,
+      useValue: 'pt-BR'
+    },
+  ],
   bootstrap: [AppComponent],
-  schemas: [ 
- ]
+  schemas: []
 })
 
 export class AppModule { 

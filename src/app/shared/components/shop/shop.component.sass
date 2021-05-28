@@ -17,7 +17,8 @@
             display: inline-flex
             .title
                 font-family: $roboto-slab
-                font-size: 16px
+                text-transform: capitalize
+                font-size: 18px
             span
                 position: absolute
                 top: 7px
@@ -60,10 +61,9 @@
 
     .product-grid3
         .product-image3
-            img 
+            .picture
                 width: 100%
                 height: auto
-
 
     .product-grid3
         .pic-1 
@@ -145,11 +145,12 @@
                 a:hover 
                     background: #e67e22
                     color: #fff
+                img
+                    filter: grayscale(100%)
 
 
     .product-grid3
         .product-new-label 
-            background-color: #e67e22
             color: #fff
             font-size: 12px
             padding: 2px 14px
@@ -159,6 +160,11 @@
             transition: all .3s
             font-family: 'Arial'
             text-transform: uppercase
+        .sale
+            background-color: $red
+
+        .new
+            background-color: $orange
 
     .product-grid3
         .product-content 
