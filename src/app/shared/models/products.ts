@@ -16,6 +16,12 @@ export interface Products {
     price: any;
     images: any;
     lastPrice?: any;
-    sizeOptions: any;
 
+    sizeOptions: SizeOptions[];
+
+}
+
+interface SizeOptions {
+    size: string,
+    available: boolean
 }

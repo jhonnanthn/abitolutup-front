@@ -9,7 +9,6 @@ export class CurrencyFormatPipe implements PipeTransform {
     }
 
     transform(value: number): any {
-        console.log(value);
         return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value);
     }
 

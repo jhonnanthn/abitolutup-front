@@ -1,38 +1,144 @@
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <ul class="nav navbar-nav pull-left me-auto">
-            <li class="nav-item"><a class="nav-link" routerLink="/home" routerLinkActive="active">Novo!</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categoria</a>
-                <ul class="dropdown-menu">
-                    <li><a routerLink="/trends">Produtos</a>
+<div class="header">
+    <div class="desktop">
+        <nav class="navbar fixed-top navbar-default">
+            <div class="nav navbar-nav collapse navbar-collapse js-navbar-collapse">
+                <div class="items">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item"><a class="nav-link" routerLink="/" routerLinkActive="active">Novo!</a></li>
+                        <li class="nav-item dropdown mega-dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Categorias</a>
+
+                            <ul class="dropdown-menu mega-dropdown-menu row">
+                                <div class="container">
+                                    <li class="col-sm-4">
+                                        <ul>
+                                            <li class="dropdown-header">Vestuário</li>
+                                            <li><a routerLink="/trends/vestuario/camisetas">Camisetas</a></li>
+                                            <li><a routerLink="/trends/vestuario/moletons">Moletons</a></li>
+                                            <li><a routerLink="/trends/vestuario/corta-ventos">Corta ventos</a></li>
+                                            <li><a routerLink="/trends/vestuario/calcas">Calças</a></li>
+                                            <li><a routerLink="/trends/vestuario/shorts">Shorts</a></li>
+                                            <li><a routerLink="/trends/vestuario/jaquetas">Jaquetas</a></li>
+                                            <li><a routerLink="/trends/vestuario/camisas">Camisas</a></li>
+                                            <li><a routerLink="/trends/vestuario/regatas">Regatas</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="col-sm-4">
+                                        <ul>
+                                            <li class="dropdown-header">Acessórios</li>
+                                            <li><a routerLink="/trends/acessorios/bones">Bonés</a></li>
+                                            <li><a routerLink="/trends/acessorios/gorros">Gorros</a></li>
+                                            <li><a routerLink="/trends/acessorios/bucket">Bucket</a></li>
+                                            <li><a routerLink="/trends/acessorios/bags">Bags</a></li>
+                                            <li><a routerLink="/trends/acessorios/chinelos">Chinelos</a></li>
+                                            <li><a routerLink="/trends/acessorios/perfumes">Perfumes</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="col-sm-4">
+                                        <ul>
+                                            <li class="dropdown-header">Underwear</li>
+                                            <li><a routerLink="/trends/underwear/cuecas">Cuecas</a></li>
+                                            <li><a routerLink="/trends/acessorios/meias">Meias</a></li>
+                                            <li><a routerLink="/trends/acessorios/kits">Kits</a></li>
+                                        </ul>
+                                    </li>
+                                </div>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown mega-dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Marcas</a>
+
+                            <ul class="dropdown-menu mega-dropdown-menu row">
+                                <div class="container">
+                                    <li class="col-sm-12">
+                                        <ul>
+                                            <li class="dropdown-header">Marcas</li>
+                                            <li><a routerLink="/marcas/austin-club">Austin Club</a></li>
+                                            <li><a routerLink="/marcas/BuH">BuH</a></li>
+                                        </ul>
+                                    </li>
+                                </div>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link sale" routerLink="/sale" routerLinkActive="active">Sale</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Abitolut Up</a>
+            </div>
+
+            <div class="navbar-buttons">
+                <ul class="nav navbar-nav pull-right login">
+                    <!--li><a routerLink="/login" routerLinkActive="active"><i class="fas fa-user fa-2x"></i></a></li-->
+                    <li class="navbar-item"><img src="assets/img/search.svg" width="20px" height="20px"></li>
+                    <li class="navbar-item"><img src="assets/img/user.svg" width="20px" height="20px"></li>
+                    <li class="navbar-item">
+                        <img src="assets/img/heart.svg" width="20px" height="20px">
+                        <span class="cartBadge heart">7</span>
                     </li>
-                    <li><a href="/trends/roupas/camisetas">Camisetas</a>
-                    </li>
-                    <li><a href="#">Something else here</a>
-                    </li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">Separated link</a>
+                    <li class="navbar-item">
+                        <img src="assets/img/shopping-bag.svg" width="20px" height="20px">
+                        <span class="cartBadge bag">7</span>
                     </li>
                 </ul>
-            </li>
-            <li class="nav-item"><a class="nav-link" routerLink="/services" routerLinkActive="active">Marcas</a></li>
-            <li class="nav-item"><a class="nav-link" routerLink="/contact" routerLinkActive="active">Sale</a></li>
-        </ul>
-
-        <ul class="nav navbar-nav pull-center">
-            <a class="navbar-brand" routerLink="/home">ABITOLUT UP</a>
-        </ul>
-
-        <ul class="nav navbar-nav pull-right login">
-            <!--li><a routerLink="/login" routerLinkActive="active"><i class="fas fa-user fa-2x"></i></a></li-->
-            <li class="navbar-item"><img src="assets/img/search.svg" width="20px" height="20px"></li>
-            <li class="navbar-item"><img src="assets/img/user.svg" width="20px" height="20px"></li>
-            <li class="navbar-item">
-                <img src="assets/img/shopping-bag.svg" width="20px" height="20px">
-                <span class="cartBadge">7</span>
-            </li>
-        </ul>
+            </div>
+        </nav>
     </div>
-</nav>
-<app-navbar></app-navbar>
+    <div class="mobile">
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <img src="assets/img/menu.svg" width="24px" height="24px">
+            </button>
+            <a href="#" class="navbar-brand">Abitolut Up</a>
+        
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <a routerLink="/" routerLinkActive="active" class="nav-item nav-link active">Novo!</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Categorias</a>
+                        <div class="dropdown-menu">
+                            <a routerLink="/trends/vestuario/camisetas" class="dropdown-item">Camisetas</a>
+                            <a routerLink="/trends/vestuario/moletons" class="dropdown-item">Moletons</a>
+                            <a routerLink="/trends/vestuario/corta-ventos" class="dropdown-item">Corta ventos</a>
+                            <a routerLink="/trends/vestuario/calcas" class="dropdown-item">Calças</a>
+                            <a routerLink="/trends/vestuario/shorts" class="dropdown-item">Shorts</a>
+                            <a routerLink="/trends/vestuario/jaquetas" class="dropdown-item">Jaquetas</a>
+                            <a routerLink="/trends/vestuario/camisas" class="dropdown-item">Camisas</a>
+                            <a routerLink="/trends/vestuario/regatas" class="dropdown-item">Regatas</a>
+                            <a href="#" class="dropdown-item">Inbox</a>
+                            <a href="#" class="dropdown-item">Sent</a>
+                            <a href="#" class="dropdown-item">Drafts</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Messages 2</a>
+                                <div class="dropdown-menu">
+                                    <a href="#" class="dropdown-item">Inbox</a>
+                                    <a href="#" class="dropdown-item">Sent</a>
+                                    <a href="#" class="dropdown-item">Drafts</a>
+                                </div>
+                        </div>
+                    </div>
+                    <a routerLink="/" class="nav-item nav-link">Sale</a>
+                </div>
+                <form class="form-inline">
+                    <div class="input-group">                    
+                        <input type="text" class="form-control" placeholder="Search">
+                        <div class="input-group-append">
+                            <button type="button" class="btn btn-secondary"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+                <div class="navbar-nav">
+                    <a href="#" class="nav-item nav-link">Login</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>

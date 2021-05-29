@@ -22,25 +22,28 @@
     </div>
     <div class="container">
         <div class="row">
-            <div *ngFor="let product of products" class="col-md-3 col-sm-6 col-6">
+            <div *ngFor="let product of products" class="col-md-3 col-sm-4 col-lg-3 col-6">
                 <div class="product-grid3">
                     <div class="product-image3">
                         <a [routerLink]="['/produto', product.id]">
                             <img class="picture pic-1" [src]="product.images[0]">
                             <img class="picture pic-2" [src]="product.images[1]">
                         </a>
-                        <ul class="social">
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                        <ul class="social col-12">
+                            <span *ngFor="let size of product.sizeOptions">
+                                <li *ngIf="size.available">
+                                    <a  [routerLink]="['/produto', product.id]" [queryParams]="{ size: size.size}">{{size.size}}</a>
+                                </li>
+                            </span>
                         </ul>
-                        <span *ngIf="product.isNew" class="product-new-label new">New</span>
-                        <span *ngIf="product.isSale" class="product-new-label sale">Sale</span>
+                        <span *ngIf="product.isNew" class="product-label product-new">New</span>
+                        <span *ngIf="product.isSale" class="product-label product-sale">Sale</span>
                     </div>
                     <div class="product-content">
                         <h3 class="title"><a href="#">{{product.name}}</a></h3>
                         <div class="price">
-                            {{product.price | currencyFormat}}
-                            <span *ngIf="product.lastPrice">{{product.lastPrice | currencyFormat}}</span>
+                            <span [class.sale]="product.isSale">{{product.price | currencyFormat}}</span>
+                            <span class="lastPrice" *ngIf="product.lastPrice">{{product.lastPrice | currencyFormat}}</span>
                         </div>
                     </div>
                 </div>

@@ -1,17 +1,77 @@
 @import "../../../../_variables"
 
-@media only screen and (max-width: 600px)
-    .navbar
-        display: none
+@media screen and (max-width: 800px) 
+    .navbar-nav .dropdown-menu
+        position: relative !important
+        float: none !important
+    .desktop
+        display: none !important
+    .mobile
+        display: inherit !important
+        .navbar
+            justify-content: flex-start
+            font-family: $roboto-slab
+            text-transform: uppercase
+            background-color: #fff !important
+            position: fixed
+            width: 100%
+            z-index: 1111111
+            .navbar-toggler
+                border: 0
+            .navbar-brand
+                font-size: 24px
+            .nav-link
+                border-bottom: .5px solid #e2e2e2
+                padding: 1rem 0
+                font-size: 16px
+            .dropdown-toggle::after
+                float: right
+                margin-top: 8px
+        *:focus-visible,
+        *:focus:not(:focus-visible)
+            outline: 0
 
+@media only screen
+    .header
+        display: contents
+        .mobile
+            display: none
+        .desktop
+            .navbar
+                display: flex
+                flex-wrap: inherit
+                text-transform: uppercase
+                font-family: $roboto-slab
+                font-size: 16px
+                padding: 0.5rem
+                margin-bottom: 0 !important
+                height: 65px
+                .dropdown-toggle
+                    background-color: transparent
+            .items
+                display: flex
+                margin-right: 50%
+                .navbar-nav
+                    display: contents
+                    .nav-item
+                        margin: 0 1rem
+                        a
+                            padding: 0
+                    .nav-link, .dropdown-toggle
+                        top: 3px
+                    
+                    .active
+                        color: $brown
+                    .sale
+                        color: $red
+            .dropdown-toggle::after
+                margin-left: 0
+            .navbar-default
+                background-color: transparent
 
-@media (min-width: 576px)
-    .navbar
-        display: flow-root
-        z-index: 99999
-        margin-bottom: 0
-        .container-fluid
-            display: contents
+            .navbar-collapse.collapse
+                display: contents !important
+
             .navbar-brand
                 margin-left: 0
                 color: #242323
@@ -60,3 +120,70 @@
                         bottom: 10px
                         right: 5px
                         font-family: Arial
+                    .heart
+                        right: 2px
+
+            .navbar-nav>li>.dropdown-menu 
+                border-top-left-radius: 4px
+                border-top-right-radius: 4px
+
+            .mega-dropdown 
+                position: static !important
+                width: 100%
+
+            .mega-dropdown-menu 
+                padding: 20px 0px
+                width: 100%
+                box-shadow: none
+                -webkit-box-shadow: none
+
+            .navbar-nav .dropdown-menu 
+                position: absolute
+                float: none
+
+            .dropdown-toggle::after
+                border: 0 !important
+
+            .mega-dropdown-menu > li > ul 
+                padding: 0
+                margin: 0
+
+            .mega-dropdown-menu > li > ul > li 
+                list-style: none
+
+            .mega-dropdown-menu > li > ul > li > a 
+                display: block
+                padding: 3px 20px
+                clear: both
+                font-weight: normal
+                line-height: 1.428571429
+                color: #999
+
+            .mega-dropdown-menu > li ul > li > a:hover,
+            .mega-dropdown-menu > li ul > li > a:focus 
+                text-decoration: none
+                color: #444
+
+            .mega-dropdown-menu form 
+                margin: 3px 20px
+
+
+            .mega-dropdown-menu .form-group 
+                margin-bottom: 3px
+
+            .dropdown-header
+                padding: 0
+                font-size: 14px
+                color: $light-gray
+            .dropdown-menu
+                border: 1px solid #000
+                border: 1px solid rgba(0,0,0,.15)
+                border-radius: 0 !important
+                ul
+                    list-style-type: none
+                    padding: 0
+                    letter-spacing: 1px
+                    a
+                        letter-spacing: 1px
+                        color: $dark-gray
+                        font-size: 12px

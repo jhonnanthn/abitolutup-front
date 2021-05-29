@@ -45,6 +45,7 @@ export class ProductDetailsComponent implements OnInit {
       ],
       name: 'Blazer Piquet - Branco',
       price: 1254.5,
+      lastPrice: 1599.99,
       type: 'social',
       images: [
         'http://bestjquery.com/tutorial/product-grid/demo4/images/img-1.jpg',
@@ -52,6 +53,7 @@ export class ProductDetailsComponent implements OnInit {
       ],
       maxParcel: 3,
       isWishlist: false,
+      isSale: true,
       description: 'Tecido: Malha.<br>Composição: 100% Algodão',
       instruction: 'Instruções de Lavagem:<br>- Lave a mão com água em temperatura ambiente;'
     };
@@ -66,8 +68,12 @@ export class ProductDetailsComponent implements OnInit {
       return router;
     });
 
-    this.route.paramMap.subscribe( paramMap => {
+    this.route.paramMap.subscribe(paramMap => {
       this.productId = paramMap.get('productId') || '';
     })
+    this.route.queryParamMap.subscribe(params => {
+      if(this.product.sizeOptions.find((item: any) => item.size == params.get('size') && item.available))
+        this.product.size = params.get('size') || undefined;
+    });
   }
 }
