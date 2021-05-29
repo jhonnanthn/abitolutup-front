@@ -18,7 +18,5 @@ export class HeaderComponent implements OnInit {
         e.stopPropagation();
         $(".desktop .mega-dropdown").removeClass('open');
     });
-
-    
   }
 }
