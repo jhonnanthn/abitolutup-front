@@ -38,7 +38,7 @@ export class ProductDetailsComponent implements OnInit {
       this.productId = paramMap.get('productId') || '';
     })
 
-    this.productService.getProductById(this.productId)
+    this.productService.fetchById(this.productId)
       .subscribe(product => {
         this.product = product;
         Object.keys(product.menu).forEach((key, index) => {

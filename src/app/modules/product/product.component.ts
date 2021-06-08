@@ -31,7 +31,7 @@ export class ProductComponent implements OnInit {
         this.route.data.subscribe((data: any) => parameters.page = data.page);
     });
     
-    this.productService.getProducts(parameters)
+    this.productService.fetchAll(parameters)
       .subscribe(results => this.products = results);
 
     this.route.params.subscribe(params => {

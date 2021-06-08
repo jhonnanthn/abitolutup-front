@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
     let parameters: any = {};
     this.route.data.subscribe((data: any) => parameters.page = data.page)
   
-    this.productService.getProducts(parameters)
+    this.productService.fetchAll(parameters)
       .subscribe(results => this.products = results);
 
     this.images.push({

@@ -15,14 +15,13 @@ export class ProductService {
   constructor(
     private request: RequestApi,
     private http: HttpClient
-  ) {
-  }
+  ) {}
 
-  getProducts(params?: Observable<Params>): Observable<Products[]> {
+  fetchAll(params?: Observable<Params>): Observable<Products[]> {
     return this.request.get<Products[]>(`${this.productUrl}`, params);
   }
 
-  getProductById(id: string): Observable<Products> {
+  fetchById(id: string): Observable<Products> {
     return this.request.get<Products>(`${this.productUrl}/${id}`);
   }
 }
