@@ -4,6 +4,7 @@ import { ProductComponent } from './product.component';
 import { ProductRoutingModule } from './product.routing.module';
 import { ShopModule } from 'src/app/shared/components/shop/shop.module';
 import { ProductDetailsModule } from 'src/app/shared/components/product-details/product-details.module';
+import { ProductService } from './product.service';
 
 @NgModule({
   imports: [
@@ -14,6 +15,9 @@ import { ProductDetailsModule } from 'src/app/shared/components/product-details/
   ],
   declarations: [
     ProductComponent,
+  ],
+  providers: [
+    ProductService
   ],
   exports: [ProductComponent]
 })

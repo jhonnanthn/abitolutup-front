@@ -10,28 +10,8 @@
         <div class="row">
             <div class="col-md-8 col-sm-12 col-xs-12">
                 <div class="product-image">
-                    <div id="myCarousel-2" class="carousel slide">
-                        <ol class="carousel-indicators">
-                            <li data-target="#myCarousel-2" data-slide-to="0" class=""></li>
-                            <li data-target="#myCarousel-2" data-slide-to="1" class="active"></li>
-                            <li data-target="#myCarousel-2" data-slide-to="2" class=""></li>
-                        </ol>
-                        <div class="carousel-inner">
-                            <!-- Slide 1 -->
-                            <div class="item active">
-                                <img src="https://via.placeholder.com/700x400/FFB6C1/000000" class="img-responsive" alt="" />
-                            </div>
-                            <!-- Slide 2 -->
-                            <div class="item">
-                                <img src="https://via.placeholder.com/700x400/87CEFA/000000" class="img-responsive" alt="" />
-                            </div>
-                            <!-- Slide 3 -->
-                            <div class="item">
-                                <img src="https://via.placeholder.com/700x400/B0C4DE/000000" class="img-responsive" alt="" />
-                            </div>
-                        </div>
-                        <a class="left carousel-control" href="#myCarousel-2" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span> </a>
-                        <a class="right carousel-control" href="#myCarousel-2" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span> </a>
+                    <div class="col-sm-12 image" *ngFor="let image of product.images">
+                        <img [src]="image.url" width="500px">
                     </div>
                 </div>
             </div>
@@ -39,8 +19,8 @@
             <div class="description col-md-4 col-sm-12 col-xs-12">
                 <h2 class="name">
                     {{product.name}}
-                    <small *ngIf="product.sizeOptions.length > 0" class="available">EM ESTOQUE</small>
-                    <small *ngIf="product.sizeOptions.length == 0" class="not-available">ESGOTADO</small>
+                    <small *ngIf="product.size.length > 0" class="available">EM ESTOQUE</small>
+                    <small *ngIf="product.size.length == 0" class="not-available">ESGOTADO</small>
                 </h2>
                 <hr />
                 <h3 class="price-container">
@@ -49,18 +29,18 @@
                         <div class="lastPrice" *ngIf="product.lastPrice">{{product.lastPrice | currencyFormat }}</div>
                     </div>
                     <div *ngIf="product.maxParcel > 1">
-                        <small>ou em até {{product.maxParcel}}x sem juros de {{(product.price / product.maxParcel).toFixed(2)}}</small>
+                        <small>ou em até {{product.maxParcel}}x sem juros de {{(product.price / product.maxParcel) | currencyFormat }}</small>
                     </div>
                 </h3>
                 <div class="size">
                     <label>Tamanho</label>
                     <ul class="nav nav-size">
-                        <div *ngFor="let sizeOption of product.sizeOptions">
+                        <div *ngFor="let sizeOption of product.size">
                             <li
                                 class="{{sizeOption.size}}" 
-                                [class.active]="product.size === sizeOption.size"
+                                [class.active]="sizeSelected === sizeOption.size"
                                 [class.not-available]="!sizeOption.available"
-                                (click)="sizeOption.available ? product.size = sizeOption.size : ''">
+                                (click)="sizeOption.available ? sizeSelected = sizeOption.size : ''">
                                 {{sizeOption.size}}
                             </li>
                         </div>

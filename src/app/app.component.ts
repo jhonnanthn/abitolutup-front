@@ -3,6 +3,7 @@ import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import {filter} from 'rxjs/operators';
 import $ from "jquery";
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -16,6 +17,7 @@ export class AppComponent {
   name = '';
 
   constructor(
+    private http : HttpClient,
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private titleService: Title

@@ -42,6 +42,7 @@
     "jquery": "^3.6.0",
     "mdbootstrap": "^4.19.2",
     "ngx-bootstrap": "^6.2.0",
+    "ngx-order-pipe": "^2.1.1",
     "popper.js": "^1.14.3",
     "rxjs": "~6.6.0",
     "tether": "^2.0.0",

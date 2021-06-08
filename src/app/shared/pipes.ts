@@ -3,7 +3,9 @@ import { CommonModule } from '@angular/common';
 import { CurrencyFormatPipe } from './pipes/currency';
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+  ],
   declarations: [
     CurrencyFormatPipe,
   ],

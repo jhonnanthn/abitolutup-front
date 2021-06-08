@@ -26,11 +26,10 @@
                 <div class="product-grid3">
                     <div class="product-image3">
                         <a [routerLink]="['/produto', product.id]">
-                            <img class="picture pic-1" [src]="product.images[0]">
-                            <img class="picture pic-2" [src]="product.images[1]">
+                            <img class="pic-{{index + 1 }} picture" *ngFor="let image of product.images; let index = index" [src]="image.url">
                         </a>
                         <ul class="social col-12">
-                            <span *ngFor="let size of product.sizeOptions">
+                            <span *ngFor="let size of product.size | orderBy:'id'">
                                 <li *ngIf="size.available">
                                     <a  [routerLink]="['/produto', product.id]" [queryParams]="{ size: size.size}">{{size.size}}</a>
                                 </li>

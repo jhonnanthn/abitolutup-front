@@ -1,10 +1,8 @@
 export interface Products {
     id: string;
     name: string;
-    router: string;
     category: string;
     type: string;
-    size?: string;
     description: string;
     instruction: string;
     maxParcel: number;
@@ -16,12 +14,14 @@ export interface Products {
     price: any;
     images: any;
     lastPrice?: any;
+    menu: any;
 
-    sizeOptions: SizeOptions[];
+    size: SizeOptions[];
 
 }
 
 interface SizeOptions {
+    id: number,
     size: string,
     available: boolean
 }
