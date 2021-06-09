@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  cartWishes!: Observable<number>;
+  cartBag!: Observable<number>;
+
+  constructor(private storageService: StorageService) { 
+  }
 
   ngOnInit(): void {
+    this.cartBag = this.storageService.getData('bag').length
+    this.cartWishes = this.storageService.getData('wishes').length
+
     $(".desktop .dropdown-toggle").mouseover(function(){
       $(".desktop .mega-dropdown").removeClass('open');
       $(this).parent().addClass('open');

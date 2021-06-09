@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from 'src/app/modules/product/product.service';
+import { StorageService } from 'src/app/services/storage.service';
 import { Products } from '../../models/products';
 
 @Component({
@@ -16,7 +17,8 @@ export class ProductDetailsComponent implements OnInit {
   sizeSelected: string | undefined;
 
   constructor(private route: ActivatedRoute,
-    private productService: ProductService) {
+    private productService: ProductService,
+    private storageService: StorageService) {
       this.product = {
         id: '',
         name: '',
@@ -58,6 +60,17 @@ export class ProductDetailsComponent implements OnInit {
         });
       }
     );
+  }
 
+  cart(product: Products) {
+    let cartBag = this.storageService.getData('bag');
+    cartBag.push(product);
+    this.storageService.setData('bag', cartBag);
+  }
+
+  wishes(product: Products) {
+    let cartWishes = this.storageService.getData('wishes');
+    cartWishes.push(product);
+    this.storageService.setData('wishes', cartWishes);
   }
 }

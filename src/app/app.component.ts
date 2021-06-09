@@ -25,7 +25,6 @@ export class AppComponent {
   }
 
   ngOnInit() {
-
     this.router.events.pipe(
       filter((event) => event instanceof NavigationEnd)
     ).subscribe(() => {
